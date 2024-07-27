@@ -9,6 +9,9 @@
     "dev": "bun tests/index.ts",
     "build": "tsup"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",

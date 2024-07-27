@@ -63,7 +63,7 @@ export class VariantSchema<
 
       if (typeof curr === "string") {
         if (!(curr in this.generics))
-          throw new Error(`generic '${curr}' hasn't been defined`);
+          throw new Error(`generic '${curr}' hasn't been defined. Make sure to bind all generics to a type using .get(...)`);
 
         curr = this.generics[curr];
       }

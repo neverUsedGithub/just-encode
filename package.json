@@ -12,6 +12,11 @@
   "files": [
     "dist"
   ],
+  "homepage": "https://github.com/neverUsedGithub/just-encode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neverUsedGithub/just-encode.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -1,6 +1,6 @@
 {
   "name": "just-encode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Encode and decode pre-defined schemas to a binary format with full type safety.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

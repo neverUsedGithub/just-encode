@@ -1,0 +1,19 @@
+{
+  "name": "just-encode",
+  "version": "0.0.1",
+  "description": "Encode and decode pre-defined schemas to a binary format with full type safety.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun tests/index.ts",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4"
+  }
+}

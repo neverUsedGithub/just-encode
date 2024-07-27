@@ -6,12 +6,12 @@ function buf2hex(buffer: ArrayBufferLike) {
     .join(" ");
 }
 
-const Option = s.Enum({
+const Option = s.variant({
   Some: ["T"],
   None: [],
 } as const);
 
-const Result = s.Enum({
+const Result = s.variant({
   Ok: ["TOk"],
   Err: ["TErr"],
 } as const);

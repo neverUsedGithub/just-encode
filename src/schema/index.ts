@@ -35,7 +35,7 @@ export function struct<T extends Record<string, SchemaBase>>(items: T) {
   return new StructSchema(items);
 }
 
-export function Enum<
+export function variant<
   T extends Record<string, (string | SchemaBase)[]>,
   U extends Record<string, SchemaBase>
 >(

@@ -34,7 +34,7 @@ export class UIntegerSchema<T extends "8" | "16" | "32" | "64">
       ctx.view.setBigUint64(ctx.alloc(64), number as bigint);
     else
       ctx.view[`setUint${this.size as "8" | "16" | "32"}`](
-        ctx.alloc(Number(this.size)),
+        ctx.alloc(this.bitCount),
         number as number
       );
 

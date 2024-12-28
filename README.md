@@ -26,7 +26,7 @@ The currently supported data types are:
 - variants
 
 > [!TIP]
-> You can create your own data types by implementing the interface `BaseSchema`.
+> You can create your own data types by implementing the interface `SchemaBase`.
 
 ### Examples
 

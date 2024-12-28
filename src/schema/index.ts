@@ -1,7 +1,7 @@
 import type { SchemaBase } from "./base";
 
 import { MapSchema } from "./map";
-import { VariantSchema, type VariantMember } from "./variant";
+import { VariantSchema, type VariantEntry, type VariantMember } from "./variant";
 import { ArraySchema } from "./array";
 import { FloatSchema } from "./float";
 import { StringSchema } from "./string";
@@ -36,7 +36,7 @@ export function struct<T extends Record<string, SchemaBase>>(items: T) {
 }
 
 export function variant<
-  T extends Record<string, (string | SchemaBase)[]>,
+  const T extends Record<string, VariantEntry>,
   U extends Record<string, SchemaBase>
 >(
   members: T,

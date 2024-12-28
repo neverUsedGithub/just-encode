@@ -1,10 +1,18 @@
 import * as s from "../src";
 
-function buf2hex(buffer: ArrayBufferLike) {
-  return [...new Uint8Array(buffer)]
-    .map((x) => x.toString(16).padStart(2, "0"))
-    .join(" ");
+function buf2hex(buffer: ArrayBufferLike | Uint8Array) {
+  const buff = Array.from(
+    buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer)
+  );
+
+  return buff.map((x) => x.toString(16).padStart(2, "0")).join(" ");
 }
+
+const NamedVariant = s.variant({
+  Test: { test: "T", other: s.i32 },
+});
+
+const NumberNamedVariant = NamedVariant.get({ T: s.i32 });
 
 const Option = s.variant({
   Some: ["T"],
@@ -29,6 +37,7 @@ const schema = s.struct({
   enum: NumberOption,
   result: TestResult,
   boolean: s.bool,
+  named: NumberNamedVariant,
 });
 
 const encoded = schema.encode({
@@ -44,6 +53,7 @@ const encoded = schema.encode({
   enum: NumberOption.Some(75345),
   result: TestResult.Err("something went wrong"),
   boolean: true,
+  named: NumberNamedVariant.Test({ test: 123, other: 456 }),
 });
 console.log("ENCODED:", encoded);
 console.log("ENCODED:", buf2hex(encoded));

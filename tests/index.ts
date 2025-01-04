@@ -17,7 +17,7 @@ const NumberNamedVariant = NamedVariant.get({ T: s.i32 });
 const Option = s.variant({
   Some: ["T"],
   None: [],
-} as const);
+});
 
 const Result = s.variant({
   Ok: ["TOk"],

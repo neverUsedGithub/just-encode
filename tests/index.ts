@@ -22,7 +22,7 @@ const Option = s.variant({
 const Result = s.variant({
   Ok: ["TOk"],
   Err: ["TErr"],
-} as const);
+});
 
 const TestResult = Result.get({ TOk: s.i32, TErr: s.string });
 const NumberOption = Option.get({ T: s.i32 });

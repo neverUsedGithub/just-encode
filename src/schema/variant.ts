@@ -17,9 +17,12 @@ type MapItems<
 type MapValue<
   T extends string | SchemaBase,
   U extends Record<string, SchemaBase>
-> =
-  // @ts-expect-error
-  T extends string ? U[T]["infer"] : T["infer"];
+> = T extends string
+  ? T extends keyof U
+    ? U[T]["infer"]
+    : never
+  : // @ts-expect-error
+    T["infer"];
 
 type MapValues<
   T extends Record<string, string | SchemaBase>,

@@ -10,6 +10,7 @@ import { ArraySchema } from "./array";
 import { FloatSchema } from "./float";
 import { StringSchema } from "./string";
 import { StructSchema } from "./struct";
+import { BufferSchema } from "./buffer";
 import { BooleanSchema } from "./boolean";
 import { IntegerSchema } from "./integer";
 import { UIntegerSchema } from "./uinteger";
@@ -39,6 +40,10 @@ export function struct<T extends Record<string, SchemaBase>>(items: T) {
   return new StructSchema(items);
 }
 
+export function buffer(length: number) {
+  return new BufferSchema(length);
+}
+
 export function variant<
   const T extends Record<string, VariantEntry>,
   U extends Record<string, SchemaBase> = {}
@@ -55,3 +60,13 @@ export function variant<
 }
 
 export type { SchemaBase } from "./base";
+export type { MapSchema } from "./map";
+export type { VariantSchema, VariantEntry, VariantMember } from "./variant";
+export type { ArraySchema } from "./array";
+export type { FloatSchema } from "./float";
+export type { StringSchema } from "./string";
+export type { StructSchema } from "./struct";
+export type { BufferSchema } from "./buffer";
+export type { BooleanSchema } from "./boolean";
+export type { IntegerSchema } from "./integer";
+export type { UIntegerSchema } from "./uinteger";

@@ -38,6 +38,7 @@ const schema = s.struct({
   result: TestResult,
   boolean: s.bool,
   named: NumberNamedVariant,
+  rawData: s.buffer(10),
 });
 
 const encoded = schema.encode({
@@ -54,6 +55,7 @@ const encoded = schema.encode({
   result: TestResult.Err("something went wrong"),
   boolean: true,
   named: NumberNamedVariant.Test({ test: 123, other: 456 }),
+  rawData: new Uint8Array([1, 2, 3, 4, 5]),
 });
 console.log("ENCODED:", encoded);
 console.log("ENCODED:", buf2hex(encoded));
